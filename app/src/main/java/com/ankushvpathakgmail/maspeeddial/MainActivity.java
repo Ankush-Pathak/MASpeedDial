@@ -5,18 +5,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonCall:
                 if(editTextNo.getText().length() == 10)
                 {
-                    Intent callintent=new Intent(Intent.ACTION_DIAL);
+                    Intent callintent = new Intent(Intent.ACTION_CALL);
                     callintent.setData(Uri.parse("tel:" + editTextNo.getText().toString()));
                     try
                     {
